@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <!--Header-->
+    <header>
+        <h1>
+            <img src="Images/VacaclubLogo.ico" alt="vc logo" />
+        </h1>
+    </header>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" runat="server" href="~/">Vaca Club</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a runat="server" href="~/">Inicio</a></li>
+                    <li><a runat="server" href="~/About">Acerca de</a></li>
+                    <li><a runat="server" href="~/Contact">Contacto</a></li>
+                    <li><a runat="server" href="~/ProductList">Menú</a></li>
+                </ul>
+                <asp:LoginView runat="server" ViewStateMode="Disabled">
+                    <AnonymousTemplate>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a runat="server" href="~/Account/Register">Registrarse</a></li>
+                            <li><a runat="server" href="~/Account/Login">Iniciar sesión</a></li>
+                        </ul>
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hola. <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                            <li>
+                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                            </li>
+                        </ul>
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+        </div>
+    </div>
+    <div id="TitleContent" style="text-align: center">
+        <a runat="server" href="~/">
+            <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/VacaclubLogo.ico" BorderStyle="None" width="200px" heigh="200px" />
+        </a>
+        <br />
+    </div>
+    <!--navegacion-->
+    <nav class="navbar">
+        <a href="#">Inicio</a>
+        <a href="#">Quienes somos</a>
+        <a href="#">Servicios</a>
+        <a href="#">Tarifas</a>
+        <a href="#">Localizacion</a>
+    </nav>
+
+    <section class="content who">
+
+    </section>
+
+</body>
+</html>

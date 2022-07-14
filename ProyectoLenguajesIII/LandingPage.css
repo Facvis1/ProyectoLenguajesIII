@@ -1,0 +1,7 @@
+﻿body {
+   
+}
+header.headvc { 
+    height: 450px; background: url(..images/vcheader.jpg)
+    no-repeat center top; background-size: cover
+}
